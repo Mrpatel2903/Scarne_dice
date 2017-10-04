@@ -1,53 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yashexample.scarne_dice.MainActivity">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/score"
+        android:gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/userLabel"/>
+        android:text="" />
+
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:id="@+id/dice"
-        android:layout_below="@+id/userLabel"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="45dp" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Roll"
-        android:id="@+id/roll"
-        android:layout_below="@+id/dice"
-        android:onClick="roll"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="16dp" />
+        android:layout_gravity="center"
+        android:src="@drawable/dice1" />
 
-    <Button
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hold"
-        android:id="@+id/hold"
-        android:onClick="hold"
-        android:layout_alignTop="@+id/roll"
-        android:layout_toRightOf="@+id/roll"
-        android:layout_toEndOf="@+id/roll" />
+        android:layout_margin="5dp"
+        android:orientation="horizontal">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset"
-        android:id="@+id/reset"
-        android:onClick="reset"
-        android:layout_alignBottom="@+id/hold"
-        android:layout_toRightOf="@+id/hold"
-        android:layout_toEndOf="@+id/hold" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/roll"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:onClick="roll"
+            android:text="ROLL" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/hold"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:onClick="hold"
+            android:text="HOLD" />
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:onClick="reset"
+            android:text="RESET" />
+
+    </LinearLayout>
+</LinearLayout>
